@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+}
+
+.container {
+    position: relative;
+    border: 8px solid black;
+    margin: 2vh 1vw;
+    margin-bottom: 0;
+    width: 97vw;
+    height: 90vh;
+}
+
+.block {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    opacity: 0.5;
+}
