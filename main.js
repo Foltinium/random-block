@@ -1,6 +1,9 @@
 let container = document.querySelector(`.container`);
 let buttonAdd = document.querySelector(`.buttonAdd`);
 let buttonDel = document.querySelector(`.buttonDel`);
+let containerInf = document.querySelector(`.inf`);
+
+let counter = 0;
 
 // function onClick() {
 //     min = 5;
@@ -44,9 +47,14 @@ buttonAdd.addEventListener(`click`, function () {
         blockNode.style.backgroundColor = color;
         blockNode.style.left = `calc(${x}vw - 0.3vw)`;
         blockNode.style.top = `${y}vh`;
+
+        counter++;
+        containerInf.innerHTML = counter;
     }
 })
 
 buttonDel.addEventListener(`click`, function () {
     container.innerHTML = ``;
+    counter = 0;
+    containerInf.innerHTML = counter;
 })
