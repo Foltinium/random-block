@@ -2,6 +2,24 @@ body {
     margin: 0;
 }
 
+.inf {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    position: relative;
+    top: 6px;
+}
+
+button {
+    background: conic-gradient(rgba(255, 0, 0, .5), rgba(0, 255, 0, .5), rgba(0, 0, 255, .5), rgba(255, 0, 0, .5));
+    border: none;
+    outline: 2px #040 solid;
+}
+
+button:focus {
+    outline: 2px #080 dashed;
+}
+
 .container {
     position: relative;
     border: 8px solid black;

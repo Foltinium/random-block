@@ -1,32 +1,16 @@
 let container = document.querySelector(`.container`);
 let buttonAdd = document.querySelector(`.buttonAdd`);
 let buttonDel = document.querySelector(`.buttonDel`);
-let containerInf = document.querySelector(`.inf`);
+let counterBlocks = document.querySelector(`.counter-blocks`);
 
 let counter = 0;
-
-// function onClick() {
-//     min = 5;
-//     max = 80;
-
-//     let x = Math.floor(Math.random() * (max - min)) + min;
-//     let y = Math.floor(Math.random() * (max - min)) + min;
-//     let block = `
-//         <div class="block green" style="left: ${x}vw; top: ${y}vh;"></div>
-//         `;
-//     container.innerHTML += block;
-//     return x;
-//     return y;
-// };
-
-// button.addEventListener(`click`, onClick);
 
 buttonAdd.addEventListener(`click`, function () {
     let block = `<div class="block new"></div>`;
 
     for (let i = 0; i < 10; i++) {
         let color = '#';
-        let letters = '0123456789ABCDEF';
+        let letters = '0123456789abcdef';
         for (let i = 0; i < 6; i++) {
             color += letters[Math.floor(Math.random() * 16)];
         }
@@ -49,12 +33,21 @@ buttonAdd.addEventListener(`click`, function () {
         blockNode.style.top = `${y}vh`;
 
         counter++;
-        containerInf.innerHTML = counter;
+
+        if (counter % 500 == 0) {
+            counterBlocks.style.color = 'red';
+            counterBlocks.style.fontSize = 1.25 + 'rem';
+        } else {
+            counterBlocks.style.color = 'inherit';
+            counterBlocks.style.fontSize = 'inherit';
+        }
+
+        counterBlocks.innerHTML = counter;
     }
 })
 
 buttonDel.addEventListener(`click`, function () {
     container.innerHTML = ``;
     counter = 0;
-    containerInf.innerHTML = counter;
+    counterBlocks.innerHTML = counter;
 })
